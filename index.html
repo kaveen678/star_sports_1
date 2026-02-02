@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Sports Live - Clappr</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@clappr/player@latest/dist/clappr.min.js"></script>
+    
+    <style>
+        /* පසුබිම සම්පූර්ණයෙන්ම කළු කිරීමට සහ හිඩැස් නැති කිරීමට */
+        html, body {
+            background-color: #000000 !important;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* Scroll bars ඉවත් කිරීමට */
+            display: flex;
+            justify-content: center; /* දෙපැත්තට බැලන්ස් කිරීමට */
+            align-items: center;    /* උඩ යට බැලන්ස් කිරීමට */
+        }
+
+        /* ප්ලේයර් එකේ සයිස් එක පාලනය කිරීම */
+        #player {
+            width: 100%;
+            height: 100%;
+            max-width: 100vw;
+            max-height: 100vh;
+        }
+    </style>
+</head>
+<body>
+
+<div id="player"></div>
+
+<script>
+    // ප්ලේයර් එකේ ඔරිජිනල් සෙටින්ග්ස් කිසිවක් වෙනස් කර නැත
+    var player = new Clappr.Player({
+        source: "https://playztv-apps.pages.dev/star-sports/index.m3u8",
+        parentId: "#player",
+        autoPlay: true,
+        width: "100%",
+        height: "100%",
+        mimeType: "application/x-mpegURL",
+        mediacontrol: {seekbar: "#ff0000", buttons: "#ffffff"},
+        playback: {
+            playInline: true,
+            recycleVideo: true,
+        }
+    });
+</script>
+
+</body>
+</html>
